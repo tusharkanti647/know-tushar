@@ -1,0 +1,171 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: rgb(25, 30, 54);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+
+.header,
+.body {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.headerInner,
+.bodyInner {
+  width: 87%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 25px 0; */
+}
+.headerLeft {
+  width: 50%;
+  color: #58b1f5;
+}
+#section1-job {
+  color: #58b1f5;
+}
+
+.headerRight {
+  width: 50%;
+  padding-right: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section1 {
+  margin-top: 7vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section1-textDiv {
+  width: 70%;
+}
+.section1-photoDiv {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+.circle-image {
+  width: 300px; /* Set the desired width */
+  height: 300px; /* Set the desired height */
+  border-radius: 50%; /* Make the shape circular */
+  overflow: hidden; /* Ensure the image fits within the circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-image img {
+  position: relative;
+  top: 50px;
+  left: 0px;
+  width: 100%; /* Ensure the image covers the container */
+  /* height: 100%;  */
+  object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+}
+
+.connectionDiv {
+  margin: 40px 0;
+}
+.iconDiv {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.myIcon {
+  font-size: 40px;
+  color: #58b1f5;
+  cursor: pointer;
+  transition: font-size ease, box-shadow 0.3s ease;
+}
+.myIcon:hover {
+  font-size: 44px;
+  box-shadow: 0 0 10px #58b1f5;
+}
+
+.callMeDiv {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  color: #58b1f5;
+  margin: 5px 0;
+}
+
+.hireMe {
+  display: flex; /* Enables Flexbox */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  width: 145px;
+  height: 50px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  background: linear-gradient(to right, rgb(44, 202, 44), #58b1f5);
+  box-shadow: 0 0 10px rgb(44, 202, 44);
+  transition: box-shadow 0.3s ease, height 0.3s ease, width 0.3s ease;
+}
+
+.hireMe:hover {
+  width: 150px;
+  height: 53px;
+  /* border-radius: 50px; */
+  box-shadow: 0 0 15px rgb(44, 202, 44);
+}
