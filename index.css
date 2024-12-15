@@ -7,6 +7,7 @@ html,
 body {
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer */
+  background-color: rgb(25, 30, 54);
 }
 
 html::-webkit-scrollbar,
@@ -308,10 +309,10 @@ button:focus-visible {
   color: white;
 }
 .tabContent-div {
-  align-items: center;
+  /* align-items: center;
   gap: 40px;
   justify-content: space-around;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 }
 
 .tab-content {
@@ -321,6 +322,10 @@ button:focus-visible {
 
 .tab-content.active {
   display: flex; /* Show the active tab content */
+  align-items: center;
+  gap: 40px;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 .skills-icon {
   padding: 30px;
