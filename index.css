@@ -194,7 +194,9 @@ button:focus-visible {
 
 /* -----------------------section2 style------------------------------------------- */
 .section2,
-.section3 {
+.section3,
+.section7,
+.section5 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -248,7 +250,8 @@ button:focus-visible {
   background-color: #0d1224;
 }
 
-.aboutbody {
+.aboutbody,
+.skills_body {
   margin-top: 80px;
   display: flex;
   align-items: center;
@@ -279,3 +282,155 @@ button:focus-visible {
 
 /* -----------------------section3 style------------------------------------------- */
 
+/* -----------------------section5 style------------------------------------------- */
+
+.skills_body {
+  flex-direction: column;
+}
+.skills_tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #58b1f5;
+  border-radius: 20px;
+}
+
+.tab {
+  padding: 10px 30px;
+  border: 1px solid #58b1f5;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.tab.active {
+  background: linear-gradient(to right, rgb(44, 202, 44), #58b1f5);
+  color: white;
+}
+.tabContent-div {
+  align-items: center;
+  gap: 40px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.tab-content {
+  display: none; /* Hide all tab content by default */
+  padding: 10px 0;
+}
+
+.tab-content.active {
+  display: flex; /* Show the active tab content */
+}
+.skills-icon {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+}
+/* -----------------------section7 style------------------------------------------- */
+.section7 {
+  width: 100%;
+}
+.form-container {
+  /* max-width: 400px; */
+  margin: 0 auto;
+  width: 100%;
+  /* background: #fff; */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 26px rgba(0, 0, 0, 0.7);
+
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+
+.clientFormInner,
+#clientForm {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.clientFormInner {
+  width: 100%;
+  justify-content: space-around;
+}
+#clientForm {
+  flex-direction: column;
+  justify-content: center;
+}
+.form_contact {
+}
+.from-header {
+  text-align: center;
+  color: #58b1f5;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #58b1f5;
+}
+label span {
+  color: red;
+}
+input,
+textarea {
+  width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #58b1f5;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input:focus,
+textarea:focus {
+  border: 2px solid #58b1f5;
+  border-radius: 6px;
+  outline: none;
+}
+textarea {
+  resize: none;
+  height: 100px;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.form_submit {
+  /* width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; */
+
+  display: flex; /* Enables Flexbox */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  width: 145px;
+  height: 50px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  background: linear-gradient(to right, rgb(44, 202, 44), #58b1f5);
+  box-shadow: 0 0 10px rgb(44, 202, 44);
+  transition: box-shadow 0.3s ease, height 0.3s ease, width 0.3s ease;
+}
+.form_submit:hover {
+  width: 150px;
+  height: 53px;
+  /* border-radius: 50px; */
+  box-shadow: 0 0 15px rgb(44, 202, 44);
+}

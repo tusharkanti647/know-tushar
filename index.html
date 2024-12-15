@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About tushar</title>
     <link rel="stylesheet" href="./index.css" />
@@ -190,9 +190,164 @@
               </div>
             </div>
           </section>
+
+          <!-- -----------SKILLS  section ------------->
+          <section class="section5">
+            <div>
+              <div class="content">
+                <div class="line-left"></div>
+                <div class="line-right"></div>
+                <p class="text">Skills</p>
+              </div>
+            </div>
+
+            <div class="skills_body">
+              <!-- _______ tabs _____________ -->
+              <div class="skills_tabs">
+                <div class="tab active" data-tab="frontend">Frontend</div>
+                <div class="tab" data-tab="backend">Backend</div>
+                <div class="tab" data-tab="other">Other</div>
+              </div>
+
+              <!-- ___________ tabs body__________________ -->
+              <div style="margin-top: 40px">
+                <div class="tab-content active tabContent-div" id="frontend">
+                  <div class="skills-icon">
+                    <img
+                      src="./asitis/icons8-html-5-color/icons8-html-5-144.png"
+                      alt="HTML5"
+                    />
+                    <p>HTML</p>
+                  </div>
+                  <div class="skills-icon">
+                    <img
+                      src="./asitis/icons8-css-color/icons8-css-144.png"
+                      alt="CSS"
+                    />
+                    <p>CSS</p>
+                  </div>
+                  <div class="skills-icon">
+                    <img
+                      src="./asitis/icons8-javascript-color/icons8-javascript-144.png"
+                      alt="JavaScript"
+                    />
+                    <p>JavaScript</p>
+                  </div>
+                  <div class="skills-icon">
+                    <img
+                      src="./asitis/icons8-react-js-color/icons8-react-js-144.png"
+                      alt="React.js"
+                    />
+                    <p>React.js</p>
+                  </div>
+                </div>
+                <div class="tab-content tabContent-div" id="backend">
+                  <div style="margin-top: 40px">
+                    <div class="skills-icon">
+                      <img
+                        src="./asitis/icons8-nodejs-color/icons8-nodejs-144.png"
+                        alt="Node.js"
+                      />
+                      <p>Node.js</p>
+                    </div>
+                    <div class="skills-icon">
+                      <img
+                        src="./asitis/icons8-express-js-color/icons8-express-js-144.png"
+                        alt="Express.js"
+                      />
+                      <p>Express.js</p>
+                    </div>
+                    <div class="skills-icon">
+                      <img
+                        src="./asitis/icons8-mongodb-color/icons8-mongodb-144.png"
+                        alt="MongoDB"
+                      />
+                      <p>MongoDB</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-content tabContent-div" id="other">
+                  <div class="skills-icon">
+                    <div class="skills-icon">
+                      <img
+                        src="./asitis/icons8-git-color/icons8-git-144.png"
+                        alt="Git"
+                      />
+                      <p>Git</p>
+                    </div>
+                    <div class="skills-icon">
+                      <img
+                        src="./asitis/icons8-mongodb-color/icons8-mongodb-144.png"
+                        alt="Docker"
+                      />
+                      <p>Docker</p>
+                    </div>
+                    <div class="skills-icon">
+                      <img
+                        src="./asitis/icons8-mongodb-color/icons8-mongodb-144.png"
+                        alt="Linux"
+                      />
+                      <p>Linux</p>
+                    </div>
+                    <div class="skills-icon">
+                      <img
+                        src="./asitis/icons8-mongodb-color/icons8-mongodb-144.png"
+                        alt="CI/CD"
+                      />
+                      <p>CI/CD</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- -----------HIRE ME  section ------------->
+          <section class="section7">
+            <div>
+              <div class="content">
+                <div class="line-left"></div>
+                <div class="line-right"></div>
+                <p class="text">Hire Me</p>
+              </div>
+            </div>
+
+            <!-- <div class="aboutbody"> -->
+            <div class="form-container">
+              <h2 class="from-header">Enter Your Information</h2>
+              <form id="clientForm">
+                <div class="clientFormInner">
+                  <div class="form_contact">
+                    <div class="form-group">
+                      <label for="name">Client Name <span>*</span></label>
+                      <input type="text" id="name" name="name" required />
+                      <div class="error" id="nameError"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email <span>*</span></label>
+                      <input type="email" id="email" name="email" required />
+                      <div class="error" id="emailError"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Phone Number <span>*</span></label>
+                      <input type="tel" id="phone" name="phone" required />
+                      <div class="error" id="phoneError"></div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="details">More Details</label>
+                    <textarea id="details" name="details"></textarea>
+                  </div>
+                </div>
+                <button class="form_submit" type="submit">Submit</button>
+              </form>
+            </div>
+            <!-- </div> -->
+          </section>
         </div>
       </main>
     </div>
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
