@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: rgb(25, 30, 54);
+  /* background-color: rgb(25, 30, 54); */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
