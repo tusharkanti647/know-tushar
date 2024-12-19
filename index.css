@@ -84,6 +84,9 @@ button:focus-visible {
   width: 50%;
   color: #58b1f5;
 }
+.headerRight-mobile {
+  display: none;
+}
 #section1-job {
   color: #58b1f5;
 }
@@ -106,6 +109,9 @@ button:focus-visible {
 .section1-textDiv {
   width: 70%;
 }
+.section1-mobile-photoDiv {
+  display: none;
+}
 .section1-photoDiv {
   width: 30%;
   display: flex;
@@ -122,6 +128,7 @@ button:focus-visible {
   position: relative; /* Relative positioning for animation */
   animation: upDown 7s infinite ease-in-out;
 }
+
 @keyframes upDown {
   0%,
   100% {
@@ -309,10 +316,11 @@ button:focus-visible {
   color: white;
 }
 .tabContent-div {
-  /* align-items: center;
+  display: flex;
+  align-items: center;
   gap: 40px;
   justify-content: space-around;
-  flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 
 .tab-content {
@@ -321,11 +329,11 @@ button:focus-visible {
 }
 
 .tab-content.active {
-  display: flex; /* Show the active tab content */
-  align-items: center;
+  display: block; /* Show the active tab content */
+  /* align-items: center;
   gap: 40px;
   justify-content: space-around;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 }
 .skills-icon {
   padding: 30px;
@@ -438,4 +446,76 @@ textarea {
   height: 53px;
   /* border-radius: 50px; */
   box-shadow: 0 0 15px rgb(44, 202, 44);
+}
+
+/* -----------------------section7 style------------------------------------------- */
+
+@media screen and (max-width: 1000px) {
+  .headerLeft {
+    width: 40%;
+  }
+  .headerRight {
+    width: 60%;
+  }
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .circle-image {
+    width: 200px;
+    height: 200px;
+  }
+  .circle-image img {
+    top: 32px;
+  }
+  .headerRight {
+    display: none;
+  }
+  .headerRight-mobile {
+    display: block;
+    width: 30%;
+  }
+  .headerLeft {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .section1 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .section1-mobile-photoDiv {
+    display: block;
+    margin-bottom: 80px;
+  }
+  .section1-photoDiv {
+    display: none;
+  }
+  .circle-image {
+    animation: none;
+    width: 300px;
+    height: 300px;
+  }
+  .circle-image img {
+    top: 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  input {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+  }
+  .form_contact {
+    width: 100%;
+  }
+  .form-group {
+    width: 100%;
+  }
 }
