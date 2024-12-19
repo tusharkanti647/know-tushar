@@ -8,6 +8,7 @@ body {
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer */
   background-color: rgb(25, 30, 54);
+  color: white;
 }
 
 html::-webkit-scrollbar,
@@ -474,11 +475,15 @@ textarea {
     display: none;
   }
   .headerRight-mobile {
-    display: block;
+    display: flex;
     width: 30%;
+    justify-content: right;
   }
   .headerLeft {
     width: 70%;
+  }
+  .menuIcon {
+    font-size: 30px;
   }
 }
 
