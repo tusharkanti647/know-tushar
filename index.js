@@ -1,6 +1,90 @@
 
 const tabs = document.querySelectorAll('.tab');
 
+
+
+////////////////////////// firbase connections //////////////////////////
+
+{/* <script type="module"> */ }
+// Import the functions you need from the SDKs you need
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";// TODO: Add SDKs for Firebase products that you want to use
+// import { ref, push } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//     apiKey: "AIzaSyAgj-Wux_A1mHUsrMak8tWTh3wsrLFexCg",
+//     authDomain: "know-tushar.firebaseapp.com",
+//     databaseURL: "https://know-tushar-default-rtdb.firebaseio.com/",
+//     projectId: "know-tushar",
+//     storageBucket: "know-tushar.firebasestorage.app",
+//     messagingSenderId: "933185447659",
+//     appId: "1:933185447659:web:e7c92352c5e23b36c800ae",
+//     measurementId: "G-09D1J8S7QW"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+// const database = getDatabase(app);
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyDMvARA-zE1mnabuXqiROaBeCajkurrDGM",
+    authDomain: "ushar-know.firebaseapp.com",
+    projectId: "ushar-know",
+    storageBucket: "ushar-know.firebasestorage.app",
+    messagingSenderId: "866544444193",
+    appId: "1:866544444193:web:6fb2f5e755480995a7d460"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+const database = getDatabase(app);
+
+
+// import { database } from './firebase-config.js';
+import { ref, push } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
+
+// Form submission handler
+const clientForm = document.getElementById('clientForm');
+clientForm.addEventListener('submit666', async (e) => {
+
+    e.preventDefault();
+
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const details = document.getElementById('details').value;
+
+    try {
+        console.log('HHHH')
+        // Store data in Firebase Realtime Database
+        const dbRef = ref(database, 'clients');
+        console.log('HHHH333')
+        await push(dbRef, { name, email, phone, details });
+        console.log('HHHH33eeeee3')
+        alert('Data submitted successfully!');
+        clientForm.reset(); // Reset form
+        console.log('HHHH111')
+    } catch (error) {
+        console.log('HHHH2222')
+        console.error('Error submitting data:', error);
+        alert('Failed to submit data. Please try again.');
+    }
+});
+
+
 ///////////////////////////  skills  tab javascript /////////////////////////////
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -23,7 +107,7 @@ tabs.forEach(tab => {
 
 
 ////////////////////////// from javascript   ////////////////////////////////
-document.getElementById('clientForm').addEventListener('submit', function (event) {
+document.getElementById('clientForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     // Clear previous errors
@@ -35,6 +119,7 @@ document.getElementById('clientForm').addEventListener('submit', function (event
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
+    const details = document.getElementById('details').value;
 
     let isValid = true;
 
@@ -94,4 +179,20 @@ document.getElementById('clientForm').addEventListener('submit', function (event
                 alert('An error occurred while submitting the form.');
             });
     }
+
+    try {
+        // Store data in Firebase
+        const dbRef = ref(database, 'clients');
+        console.log(dbRef)
+        // await push(dbRef, { name, email, phone, details });
+        alert('Data submitted successfully!');
+        // clientForm.reset(); // Reset form
+    } catch (error) {
+        console.error('Error submitting data:', error);
+        alert('Failed to submit data. Please try again.');
+    }
+
 });
+
+
+
