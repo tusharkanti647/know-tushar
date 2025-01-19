@@ -488,7 +488,8 @@ textarea {
 }
 
 @media screen and (max-width: 650px) {
-  .section1 {
+  .section1,
+  .aboutbody {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -507,6 +508,13 @@ textarea {
   }
   .circle-image img {
     top: 50px;
+  }
+  .aboutTextDiv,
+  .aboutImgDiv {
+    width: 100%;
+  }
+  .aboutImgDiv img {
+    width: 80% !important;
   }
 }
 

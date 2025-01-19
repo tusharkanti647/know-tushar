@@ -1,5 +1,7 @@
 
 const tabs = document.querySelectorAll('.tab');
+const formSubmitButton = document.getElementById('form_submit');
+let formSubmitProcess = false;
 
 
 
@@ -109,6 +111,12 @@ tabs.forEach(tab => {
 ////////////////////////// from javascript   ////////////////////////////////
 document.getElementById('clientForm').addEventListener('submit', async function (event) {
     event.preventDefault();
+    if (formSubmitProcess) {
+        return
+    }
+    formSubmitProcess = true;
+    formSubmitButton.innerText = 'Please Wait...';
+
 
     // Clear previous errors
     document.getElementById('nameError').textContent = '';
@@ -152,47 +160,72 @@ document.getElementById('clientForm').addEventListener('submit', async function 
 
     if (isValid) {
         // Send POST request
-        const url = 'https://example.com/api/submit'; // Replace with your actual URL
-        const data = {
-            name,
-            email,
-            phone,
-            details: document.getElementById('details').value.trim()
-        };
+        // const url = 'https://example.com/api/submit'; // Replace with your actual URL
+        // const data = {
+        //     name,
+        //     email,
+        //     phone,
+        //     details: document.getElementById('details').value.trim()
+        // };
 
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(response => {
-                if (response.ok) {
-                    alert('Form submitted successfully!');
-                } else {
-                    alert('Failed to submit form.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while submitting the form.');
+        // fetch(url, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+        //     .then(response => {
+        //         if (response.ok) {
+        //             alert('Form submitted successfully!');
+        //         } else {
+        //             alert('Failed to submit form.');
+        //         }
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //         alert('An error occurred while submitting the form.');
+        //     });
+
+
+        try {
+            // http://localhost:8000/fromSubmit
+            const formData = {
+                name,
+                email,
+                phone,
+                details,
+            }
+
+            let response = await fetch('https://know-tushar-api.onrender.com/fromSubmit', {
+                method: "POST", // HTTP method
+                headers: {
+                    "Content-Type": "application/json", // Inform the server about the data format
+                },
+                body: JSON.stringify(formData), // Send the form data as a JSON string
             });
-    }
+            console.log(response)
+            let data = await response.json()
+            console.log(data)
+            alert('Data submitted successfully!');
+            clientForm.reset();
+            formSubmitProcess = false;
+            formSubmitButton.innerText = 'Submit';
+        } catch (error) {
 
-    try {
-        // Store data in Firebase
-        const dbRef = ref(database, 'clients');
-        console.log(dbRef)
-        // await push(dbRef, { name, email, phone, details });
-        alert('Data submitted successfully!');
-        // clientForm.reset(); // Reset form
-    } catch (error) {
-        console.error('Error submitting data:', error);
-        alert('Failed to submit data. Please try again.');
+            console.error('Error submitting data:', error);
+            alert('Failed to submit data. Please try again.');
+            formSubmitProcess = false;
+            formSubmitButton.innerText = 'Submit';
+        }
     }
 
 });
 
 
 
+////////////////////////////////// hireme button click ///////////////////////////////
+document.getElementById('hireMeButton').addEventListener('click', function scrollToForm() {
+    const section7 = document.getElementById('section7');
+    section7.scrollIntoView({ behavior: 'smooth' });
+});
